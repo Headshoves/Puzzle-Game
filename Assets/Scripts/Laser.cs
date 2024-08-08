@@ -32,7 +32,6 @@ public class Laser : MonoBehaviour
         StartCoroutine(Trail());
         await Task.Delay(TimeSpan.FromSeconds(5f));
         _isPlaying = false;
-
     }
 
     private IEnumerator Trail() {
@@ -43,6 +42,17 @@ public class Laser : MonoBehaviour
 
             _lineRenderer.SetPosition(0, _startPos.position);
             _lineRenderer.SetPosition(1, _endPos.position);
+
+            RaycastHit hit;
+
+            if(Physics.Raycast(_startPos.position, _endPos.position, out hit)) {
+                if(hit.collider != null) {
+                    Debug.Log("Hitou " + hit.collider.name);
+                    if (hit.collider.TryGetComponent(out Target target)) {
+                        Debug.Log("hitou um target");
+                    }
+                }
+            }
 
             yield return new WaitForEndOfFrame();
         }
