@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : Piece
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool HasTower = false;
+    public bool Complete = false;
+    public bool RightTower = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected override void Start() {
+        base.Start();
     }
 }
