@@ -11,7 +11,6 @@ public static class JSONFiles
     }
 
     private static void CheckJsonFolder() {
-        Debug.Log("Chamou o método de criar json folder");
         if (!Directory.Exists(Application.persistentDataPath + "/JSON")) {
             Directory.CreateDirectory(Application.persistentDataPath + "/JSON");
         }
