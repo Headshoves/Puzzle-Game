@@ -1,16 +1,16 @@
 using DG.Tweening;
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 
 public class Tower : Piece
 {
-    [BoxGroup("Settings")][SerializeField] private float _timeToRotate = .5f;
-    [BoxGroup("Settings")][SerializeField] private bool _hasSpecificTarget = false;
-    [BoxGroup("Settings")][ShowIf("_hasSpecificTarget")][SerializeField] private Target _target;
-    [BoxGroup("Settings")] public bool Complete = false;
-    [BoxGroup("Settings")] public bool RightTarget = false;
+    [BoxGroup("General Settings")][SerializeField] private float _timeToRotate = .5f;
+    [BoxGroup("General Settings")] public bool Complete = false;
 
-
+    [BoxGroup("Tower Settings")][SerializeField] private bool _hasSpecificTarget = false;
+    [BoxGroup("Tower Settings")][ShowIf("_hasSpecificTarget")][SerializeField] private Target _target;
+    [BoxGroup("Tower Settings")] public bool RightTarget = false;
 
     private Laser _laser;
 
@@ -31,12 +31,24 @@ public class Tower : Piece
     }
 
     private void OnMouseDown() {
-        if (_canRotate) {
-            RotateTower();
+        if (_hasLimitMoves) {
+            if (_moveCount > 0) {
+                if (_canRotate) {
+                    _moveCount--;
+                    _moveText.text = _moveCount.ToString();
+                    RotateTower();
+                }
+            }
+        }
+        else {
+            if (_canRotate) {
+                RotateTower();
+            }
         }
     }
 
     private void RotateTower() {
+
         _canRotate = false;
 
         transform.DORotate(new Vector3(0, transform.rotation.eulerAngles.y + 60, 0), _timeToRotate).OnComplete(() => {
