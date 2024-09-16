@@ -94,7 +94,7 @@ public class Laser : MonoBehaviour
                     _endPoint.RotateLaser(330, mirror);
                     break;
                 case 90:
-                    _endPoint.RotateLaser(330, mirror);
+                    _endPoint.RotateLaser(30, mirror);
                     break;
                 case 30:
                     _endPoint.RotateLaser(90, mirror);

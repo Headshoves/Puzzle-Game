@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public static GameManager Instance;
+    
+    private void Awake() {
+        if(FindObjectsOfType<GameManager>().Length > 1) {
+            DestroyImmediate(gameObject);
+        }
+        else {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private async void Start() {
+        JSONFiles.CreateJsonFile("teste");
+
+        await Task.Delay(1000);
+
+        JSONFiles.SaveJsonFile("teste", "testando");
     }
+}
+
+public class UserInfo {
+    
+}
+
+public class World {
+    public string name;
+    public List<Phase> phases;
+}
+
+public class Phase {
+
 }

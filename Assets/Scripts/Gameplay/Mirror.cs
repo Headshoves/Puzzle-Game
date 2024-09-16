@@ -27,7 +27,7 @@ public class Mirror : Piece {
         float y = transform.rotation.eulerAngles.y + 60;
 
         transform.DORotate(new Vector3(0, y, 0), _timeToRotate).OnComplete(() => {
-            RotationAngle = y;
+            RotationAngle = RotationAngle <= 360 ? y : 30;
 
             _canRotate = true;
         });
