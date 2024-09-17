@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public Language Language;
     
     private void Awake() {
         if(FindObjectsOfType<GameManager>().Length > 1) {
@@ -23,6 +25,14 @@ public class GameManager : MonoBehaviour
         await Task.Delay(1000);
 
         JSONFiles.SaveJsonFile("teste", "testando");
+    }
+
+    public void ChangeLanguage(Language language) {
+        Language = language;
+
+        foreach(TranslateObject item in FindObjectsOfType<TranslateObject>()) {
+            item.ChangeLanguageTo(Language);
+        }
     }
 }
 
