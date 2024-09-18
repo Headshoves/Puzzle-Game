@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,28 +6,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TranslateText : TranslateObject {
-
-    [SerializeField] private string _englishText;
-    [SerializeField] private string _portugueseText;
-    [SerializeField] private string _spanishText;
+    
+    [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
+    [SerializeField] private string[] _texts;
     
     private TextMeshProUGUI _textMeshProUGUI;
 
     private void Start() {
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+
+        ChangeLanguageTo(GameManager.Instance.Language);
     }
 
     public override void ChangeLanguageTo(Language language) {
-        switch(language) {
-            case Language.English:
-                _textMeshProUGUI.text = _englishText;
-                break;
-            case Language.Portuguese:
-                _textMeshProUGUI.text = _portugueseText;
-                break;
-            case Language.Spanish:
-                _textMeshProUGUI.text = _spanishText;
-                break;
-        }
+        _textMeshProUGUI.text = _texts[(int)language];
     }
 }

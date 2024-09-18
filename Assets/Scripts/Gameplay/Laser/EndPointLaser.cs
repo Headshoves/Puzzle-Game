@@ -18,8 +18,6 @@ public class EndPointLaser : MonoBehaviour
 
     private int _laserPoints = 0;
 
-    private float _timeToRotate = .5f;
-
     private void OnTriggerEnter(Collider other) {
         _hitSomething = true;
         if(other.TryGetComponent(out Target target)) {
@@ -62,13 +60,12 @@ public class EndPointLaser : MonoBehaviour
         if (!_hitSomething) { _laser.HitNothing(); }
     }
 
-    public async void RotateLaser(float degree, Mirror mirror) {
+    public void RotateLaser(float degree, Mirror mirror) {
         _shoot = false;
 
         transform.eulerAngles = new Vector3(0, degree, 0);
         transform.position = new Vector3(mirror.transform.position.x, transform.position.y, mirror.transform.position.z);
 
-        await Task.Delay(TimeSpan.FromSeconds(_timeToRotate));
         _lineRenderer.positionCount++;
         _laserPoints++;
         _shoot = true;

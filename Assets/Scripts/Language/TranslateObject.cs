@@ -7,4 +7,4 @@ public abstract class TranslateObject : MonoBehaviour
     public abstract void ChangeLanguageTo(Language language);
 }
 
-public enum Language { English, Portuguese, Spanish}
+public enum Language { English = 0, Portuguese = 1}

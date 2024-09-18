@@ -21,4 +21,13 @@ public static class JSONFiles
 
         await File.WriteAllTextAsync(Application.persistentDataPath + "/JSON/" + filename + ".json", data);
     }
+
+    public static T LoadJsonFile<T>(string filename) {
+        var data = JsonUtility.FromJson<T>(File.ReadAllText(Application.persistentDataPath + "/JSON/" + filename + ".json"));
+        return data;
+    }
+
+    public static bool ContainsJsonFile(string filename) {
+        return File.Exists(Application.persistentDataPath + "/JSON/" + filename + ".json");
+    }
 }

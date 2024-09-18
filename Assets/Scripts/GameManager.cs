@@ -1,6 +1,9 @@
+using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Language Language;
+
+    [SerializeField] private UserInfo _user;
+    [SerializeField] private List<World> Worlds;
     
     private void Awake() {
         if(FindObjectsOfType<GameManager>().Length > 1) {
@@ -19,32 +25,56 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private async void Start() {
-        JSONFiles.CreateJsonFile("teste");
+    private void Start() {
 
-        await Task.Delay(1000);
-
-        JSONFiles.SaveJsonFile("teste", "testando");
+        if (JSONFiles.ContainsJsonFile("user")) {
+            _user = JSONFiles.LoadJsonFile<UserInfo>("user");
+        }
+        else {
+            JSONFiles.CreateJsonFile("user");
+            _user = new UserInfo(Worlds);
+        }
     }
 
     public void ChangeLanguage(Language language) {
         Language = language;
+        _user.language = language;
+
+        JSONFiles.SaveJsonFile("user", _user);
 
         foreach(TranslateObject item in FindObjectsOfType<TranslateObject>()) {
             item.ChangeLanguageTo(Language);
         }
     }
+
+    public List<World> GetWorlds() {
+        return Worlds;
+    }
 }
 
+[Serializable]
 public class UserInfo {
-    
+    public Language language;
+
+    public List<World> WorldData;
+
+    public UserInfo(List<World> worldData) {
+        language = Language.Portuguese;
+        WorldData = worldData;
+    }
 }
 
+[Serializable]
 public class World {
-    public string name;
-    public List<Phase> phases;
+    [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
+    public string[] Names;
+    public List<Phase> Phases;
 }
 
+[Serializable]
 public class Phase {
-
+    [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
+    public string[] Names;
+    public SceneAsset Scene;
+    public bool Completed;
 }
