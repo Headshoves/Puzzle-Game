@@ -6,6 +6,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<Combination> _combinations = new List<Combination>();
+
+    [BoxGroup("Tutorial")][SerializeField] private bool _hasTutorial;
+    [BoxGroup("Tutorial")][ShowIf("_hasTutorial")][SerializeField] private string[] _textTutorial;
+    
+    
     public static LevelManager instance;
 
     private bool _canLaunch = true;
@@ -14,9 +19,13 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start() {
+    private async void Start() {
         foreach(Tower tower in FindObjectsOfType<Tower>()) {
             _combinations.Add(new Combination(tower, tower.HasTarget() ? tower.GetTarget() : null));
+        }
+
+        for(int i = 0; i < _textTutorial.Length; i++) {
+            await GameManager.Instance.ShowTextBox(_textTutorial[i]);
         }
     }
 

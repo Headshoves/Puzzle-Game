@@ -16,8 +16,10 @@ public class Mirror : Piece {
     }
 
     private void OnMouseDown() {
-        if (_canRotate) {
-            RotateTower();
+        if(CanPlay) {
+            if (_canRotate) {
+                RotateTower();
+            }
         }
     }
 

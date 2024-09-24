@@ -31,18 +31,20 @@ public class Tower : Piece
     }
 
     private void OnMouseDown() {
-        if (_hasLimitMoves) {
-            if (_moveCount > 0) {
-                if (_canRotate) {
-                    _moveCount--;
-                    _moveText.text = _moveCount.ToString();
-                    RotateTower();
+        if (CanPlay) {
+            if (_hasLimitMoves) {
+                if (_moveCount > 0) {
+                    if (_canRotate) {
+                        _moveCount--;
+                        _moveText.text = _moveCount.ToString();
+                        RotateTower();
+                    }
                 }
             }
-        }
-        else {
-            if (_canRotate) {
-                RotateTower();
+            else {
+                if (_canRotate) {
+                    RotateTower();
+                }
             }
         }
     }

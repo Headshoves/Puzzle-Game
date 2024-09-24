@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2150938979703461340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4380763, y: 1, z: 5.9600005}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,7 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df058ff3af3dea46b9683bd688fc403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _slotPosition: {fileID: 0}
+  _yOffset: 0.75
+  _hasLimitMoves: 0
+  _moveCount: 5
+  _moveText: {fileID: 0}
   HasTower: 0
+  Complete: 0
+  RightTower: 0
 --- !u!135 &2114545463259759151
 SphereCollider:
   m_ObjectHideFlags: 0

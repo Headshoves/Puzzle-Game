@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private UserInfo _user;
     [SerializeField] private List<World> Worlds;
+
+    private TextBox _textBox;
     
     private void Awake() {
         if(FindObjectsOfType<GameManager>().Length > 1) {
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
             JSONFiles.CreateJsonFile("user");
             _user = new UserInfo(Worlds);
         }
+
+        _textBox = GetComponent<TextBox>();
     }
 
     public void ChangeLanguage(Language language) {
@@ -50,6 +54,28 @@ public class GameManager : MonoBehaviour
     public List<World> GetWorlds() {
         return Worlds;
     }
+
+    #region GAME
+
+    public async Task ShowTextBox(string text) {
+        PauseGame();
+        await _textBox.PlayText(text);
+        ResumeGame();
+    }
+
+    public void PauseGame() {
+        foreach(Piece piece in FindObjectsOfType(typeof(Piece))) {
+            piece.CanPlay = false;
+        }
+    }
+
+    public void ResumeGame() {
+        foreach (Piece piece in FindObjectsOfType(typeof(Piece))) {
+            piece.CanPlay = true;
+        }
+    }
+
+    #endregion
 }
 
 [Serializable]
