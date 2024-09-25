@@ -2,6 +2,8 @@ using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -13,6 +15,8 @@ public class LevelManager : MonoBehaviour
 
     [BoxGroup("Level Settings")][SerializeField] private GameObject _winScreen;
     [BoxGroup("Level Settings")][SerializeField] private GameObject _loseScreen;
+    [BoxGroup("Level Settings")][SerializeField] private string _nextSceneName;
+    [BoxGroup("Level Settings")][SerializeField] private string _currentSceneName;
     
     public static LevelManager instance;
 
@@ -59,7 +63,7 @@ public class LevelManager : MonoBehaviour
         CheckEndGame();
     }
 
-    private void CheckEndGame() {
+    private async void CheckEndGame() {
         bool allTowersComplete = true;
         bool allTowersRight = true;
         for(int i = 0; i < _combinations.Count; i ++) {
@@ -77,10 +81,12 @@ public class LevelManager : MonoBehaviour
 
         if (allTowersComplete) {
             if(allTowersRight) {
+                await Task.Delay(TimeSpan.FromSeconds(1f));
                 _winScreen.SetActive(true);
                 _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
             else {
+                await Task.Delay(TimeSpan.FromSeconds(1f));
                 _loseScreen.SetActive(true);
                 _loseScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
@@ -96,6 +102,18 @@ public class LevelManager : MonoBehaviour
             _canLaunch = false;
         }
         
+    }
+
+    public void NextLevel() {
+        LoadScreen.instance.LoadSceneAsync(_nextSceneName, _currentSceneName);
+    } 
+
+    public void RestartLevel() {
+        LoadScreen.instance.ReloadSceneAscyn(_currentSceneName);
+    }
+
+    public void GoToMenu() {
+        LoadScreen.instance.LoadSceneAsync("Menu", _currentSceneName);
     }
 }
 

@@ -22,6 +22,30 @@ public class LoadScreen : MonoBehaviour
         });
     }
 
+    public void ReloadSceneAscyn(string sceneName) {
+        StartCoroutine(ReloadAsync(sceneName));
+    }
+
+    private IEnumerator ReloadAsync(string sceneName) {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+
+        float percentage = 0;
+
+        while (!operation.isDone) {
+            DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
+                _loadSlider.value = percentage;
+            });
+            yield return null;
+        }
+        DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
+            _loadSlider.value = percentage;
+        });
+
+        yield return new WaitForSeconds(0.1f);
+
+        HideLoadScreen();
+    }
+
     private IEnumerator LoadAsync(string sceneName, string previousScene) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
