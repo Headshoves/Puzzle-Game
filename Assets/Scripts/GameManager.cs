@@ -57,12 +57,6 @@ public class GameManager : MonoBehaviour
 
     #region GAME
 
-    public async Task ShowTextBox(string text) {
-        PauseGame();
-        await _textBox.PlayText(text);
-        ResumeGame();
-    }
-
     public void PauseGame() {
         foreach(Piece piece in FindObjectsOfType(typeof(Piece))) {
             piece.CanPlay = false;

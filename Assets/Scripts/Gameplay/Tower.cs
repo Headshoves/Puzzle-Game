@@ -22,12 +22,12 @@ public class Tower : Piece
         base.Start();
         if (_hasSpecificTarget) {
             _target.HasTower = true;
+            _target.SetColor(ColorReference);
         }
 
         Angle = transform.rotation.eulerAngles.y;
 
         _laser = transform.GetComponentInChildren<Laser>();
-
     }
 
     private void OnMouseDown() {

@@ -8,7 +8,12 @@ public class Target : Piece
     public bool Complete = false;
     public bool RightTower = false;
 
+
     protected override void Start() {
         base.Start();
+
+        if(!HasTower) {
+            SetColor(Color.gray);
+        }
     }
 }

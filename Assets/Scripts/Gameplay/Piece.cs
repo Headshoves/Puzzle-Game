@@ -13,6 +13,10 @@ public class Piece : MonoBehaviour {
     [BoxGroup("Move Limits")][ShowIf("_hasLimitMoves")][SerializeField] protected int _moveCount = 5;
     [BoxGroup("Move Limits")][ShowIf("_hasLimitMoves")][SerializeField] protected TextMeshProUGUI _moveText;
 
+    [BoxGroup("Color")][SerializeField] protected MeshRenderer[] _objectsToChangeColor;
+    [BoxGroup("Color")][SerializeField] protected bool _hasColor = false;
+    [BoxGroup("Color")][ShowIf("_hasColor")] public Color ColorReference = Color.red;
+
     public bool CanPlay = true;
 
     protected virtual void Start() {
@@ -39,6 +43,17 @@ public class Piece : MonoBehaviour {
             _moveText = transform.GetComponentInChildren<TextMeshProUGUI>();
             _moveText.gameObject.SetActive(true);
             _moveText.text = _moveCount.ToString();
+        }
+        else {
+            _moveText = transform.GetComponentInChildren<TextMeshProUGUI>();
+            _moveText.gameObject.SetActive(false);
+        }
+
+        if(_hasColor) { SetColor(ColorReference); }
+    }
+    public void SetColor(Color color) {
+        foreach (var obj in _objectsToChangeColor) {
+            obj.material.color = color;
         }
     }
 }

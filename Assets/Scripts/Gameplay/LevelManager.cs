@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<Combination> _combinations = new List<Combination>();
 
     [BoxGroup("Tutorial")][SerializeField] private bool _hasTutorial;
-    [BoxGroup("Tutorial")][ShowIf("_hasTutorial")][SerializeField] private string[] _textTutorial;
-    
+    [BoxGroup("Tutorial")][ShowIf("_hasTutorial")][TextArea(1,5)][SerializeField] private string[] _textTutorial;
+
+    [BoxGroup("Level Settings")][SerializeField] private GameObject _winScreen;
+    [BoxGroup("Level Settings")][SerializeField] private GameObject _loseScreen;
     
     public static LevelManager instance;
 
@@ -19,14 +22,12 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    private async void Start() {
+    private void Start() {
         foreach(Tower tower in FindObjectsOfType<Tower>()) {
             _combinations.Add(new Combination(tower, tower.HasTarget() ? tower.GetTarget() : null));
         }
 
-        for(int i = 0; i < _textTutorial.Length; i++) {
-            await GameManager.Instance.ShowTextBox(_textTutorial[i]);
-        }
+        if(_hasTutorial) { TextBox.Instance.ShowTextList(_textTutorial); }
     }
 
     public void RegisterLaserCollision(Tower tower,Target target) {
@@ -76,10 +77,12 @@ public class LevelManager : MonoBehaviour
 
         if (allTowersComplete) {
             if(allTowersRight) {
-                Debug.Log("Venceu");
+                _winScreen.SetActive(true);
+                _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
             else {
-                Debug.Log("Torres não pegaram target correto");
+                _loseScreen.SetActive(true);
+                _loseScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
         }
     }
