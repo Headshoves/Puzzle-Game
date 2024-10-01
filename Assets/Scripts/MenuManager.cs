@@ -1,8 +1,11 @@
 using DG.Tweening;
 using NaughtyAttributes;
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,17 +18,27 @@ public class MenuManager : MonoBehaviour
     [SerializeField][BoxGroup("Screens")] private RectTransform _worldSelectionScreen;
 
     [SerializeField][BoxGroup("Contents")] private RectTransform _worldButtonsContent;
+    [SerializeField][BoxGroup("Contents")] private RectTransform _phasesButtonsContent;
 
     [SerializeField][BoxGroup("Prefabs")] private RectTransform _worldButtonPrefab;
+    [SerializeField][BoxGroup("Prefabs")] private RectTransform _phaseButtonPrefab;
+
+    private List<World> worlds;
+
 
     private void Start() {
-        List<World> worlds = GameManager.Instance.GetWorlds();
+        worlds = FindObjectOfType<GameManager>().GetWorlds();
 
         for(int i = 0; i < worlds.Count; i++) {
             int index = i;
             RectTransform temp = Instantiate(_worldButtonPrefab, _worldButtonsContent);
 
-            temp.GetChild(0).GetComponent<TextMeshProUGUI>().text = worlds[i].Names[(int)GameManager.Instance.Language];
+            temp.GetChild(0).GetComponent<TranslateText>().Texts = worlds[index].Names.ToList();
+
+            temp.GetComponent<Button>().onClick.RemoveAllListeners();
+            temp.GetComponent<Button>().onClick.AddListener(() => {ShowWorldPhases(worlds[index].Phases); });
+
+            temp.gameObject.SetActive(true);
         }
 
         _playButton.onClick.RemoveAllListeners();
@@ -45,5 +58,37 @@ public class MenuManager : MonoBehaviour
         _worldSelectionScreen.DOLocalMoveY(1100, .3f).OnComplete(() => {
              _introScreen.DOLocalMoveY(0, .3f);
         });
+    }
+
+    private async void ShowWorldPhases(List<Phase> phases) {
+        _worldButtonsContent.DOScale(0, 0.1f);
+
+        await Task.Delay(TimeSpan.FromSeconds(0.05f));
+
+        if (_phasesButtonsContent.childCount > 0) {
+            for (int i = 0; i < _phasesButtonsContent.childCount; i++) {
+                DestroyImmediate(_phasesButtonsContent.GetChild(0));
+            }
+        }
+
+        await Task.Delay(TimeSpan.FromSeconds(0.05f));
+
+        for (int i = 0; i < phases.Count; i++) {
+            int index = i;
+
+            RectTransform button = Instantiate(_phaseButtonPrefab, _phasesButtonsContent);
+            button.GetChild(0).GetComponent<TranslateText>().Texts = phases[index].Names.ToList();
+
+            button.GetComponent<Button>().onClick.RemoveAllListeners();
+            button.GetComponent<Button>().onClick.AddListener(() => { GoToPhase(phases[index].PhaseId); });
+
+            button.gameObject.SetActive(true);
+            button.DOScale(1, 0.1f);
+            await Task.Delay(TimeSpan.FromSeconds(0.15f));
+        }
+    }
+
+    private void GoToPhase(string phaseId) {
+        FindObjectOfType<LoadScreen>().LoadSceneAsync(phaseId, "Menu");
     }
 }

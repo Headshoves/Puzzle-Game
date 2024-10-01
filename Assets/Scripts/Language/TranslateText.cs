@@ -6,19 +6,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class TranslateText : TranslateObject {
-    
+
     [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
-    [SerializeField] private string[] _texts;
+    [SerializeField] public List<string> Texts = new List<string>();
     
     private TextMeshProUGUI _textMeshProUGUI;
 
     private void Start() {
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
 
-        ChangeLanguageTo(GameManager.Instance.Language);
+        ChangeLanguageTo(FindObjectOfType<GameManager>().Language);
     }
 
     public override void ChangeLanguageTo(Language language) {
-        _textMeshProUGUI.text = _texts[(int)language];
+        _textMeshProUGUI.text = Texts[(int)language];
     }
 }

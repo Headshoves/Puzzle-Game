@@ -17,7 +17,7 @@ public class LoadScreen : MonoBehaviour
 
     public void LoadSceneAsync(string sceneName, string previousScene) {
         _loadScreen.gameObject.SetActive(true);
-        _loadScreen.GetComponent<CanvasGroup>().DOFade(1, .2f).OnComplete(async () => {
+        _loadScreen.GetComponent<CanvasGroup>().DOFade(1, .2f).OnComplete(() => {
             StartCoroutine(LoadAsync(sceneName, previousScene));
         });
     }
@@ -47,7 +47,7 @@ public class LoadScreen : MonoBehaviour
     }
 
     private IEnumerator LoadAsync(string sceneName, string previousScene) {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         float percentage = 0;
 
@@ -60,8 +60,6 @@ public class LoadScreen : MonoBehaviour
         DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
             _loadSlider.value = percentage;
         });
-
-        SceneManager.UnloadSceneAsync(previousScene);
 
         yield return new WaitForSeconds(0.1f);
 

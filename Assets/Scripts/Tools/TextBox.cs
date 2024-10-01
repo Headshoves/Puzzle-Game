@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class TextBox : MonoBehaviour
 {
-    public static TextBox Instance;
 
     [SerializeField] private GameObject _textContent;
     [SerializeField] private TextMeshProUGUI _text;
@@ -19,13 +18,7 @@ public class TextBox : MonoBehaviour
 
     int _textCount = 0;
 
-    private void Awake() {
-        Instance = this;
-    }
-
-    private void Start() {
-        _nextButton.onClick.RemoveAllListeners();
-    }
+    string[] _textList;
 
     private async void PlayText(string text) {
 
@@ -48,27 +41,30 @@ public class TextBox : MonoBehaviour
 
     public void ShowTextList(string[] text) {
 
-        GameManager.Instance.PauseGame();
+        FindObjectOfType<GameManager>().PauseGame();
 
         _textCount = 0;
 
-        _nextButton.onClick.AddListener(() => NextText(text));
+        _textList = text;
 
-        PlayText(text[0]);
+        _nextButton.onClick.RemoveAllListeners();
+        _nextButton.onClick.AddListener(() => NextText());
+
+        PlayText(_textList[0]);
     }
 
-    private void NextText(string[] text) {
+    private void NextText() {
         _textCount++;
         _nextButton.interactable = false;
 
-        if (_textCount < text.Length) {
-            PlayText(text[_textCount]);
+        if (_textCount < _textList.Length) {
+            PlayText(_textList[_textCount]);
         }
         else {
             _textContent.GetComponent<RectTransform>().DOScale(0, .2f).OnComplete(() => {
                 _textContent.SetActive(false);
 
-                GameManager.Instance.ResumeGame();
+                FindObjectOfType<GameManager>().ResumeGame();
 
                 _nextButton.gameObject.SetActive(false);
             });

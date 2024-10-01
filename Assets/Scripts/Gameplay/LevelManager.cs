@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
             _combinations.Add(new Combination(tower, tower.HasTarget() ? tower.GetTarget() : null));
         }
 
-        if(_hasTutorial) { TextBox.Instance.ShowTextList(_textTutorial); }
+        if(_hasTutorial) { FindObjectOfType<TextBox>().ShowTextList(_textTutorial); }
     }
 
     public void RegisterLaserCollision(Tower tower,Target target) {
@@ -105,15 +105,15 @@ public class LevelManager : MonoBehaviour
     }
 
     public void NextLevel() {
-        LoadScreen.instance.LoadSceneAsync(_nextSceneName, _currentSceneName);
+        FindObjectOfType<LoadScreen>().LoadSceneAsync(_nextSceneName, _currentSceneName);
     } 
 
     public void RestartLevel() {
-        LoadScreen.instance.ReloadSceneAscyn(_currentSceneName);
+        FindObjectOfType<LoadScreen>().ReloadSceneAscyn(_currentSceneName);
     }
 
     public void GoToMenu() {
-        LoadScreen.instance.LoadSceneAsync("Menu", _currentSceneName);
+        FindObjectOfType<LoadScreen>().LoadSceneAsync("Menu", _currentSceneName);
     }
 }
 

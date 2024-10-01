@@ -324,6 +324,7 @@ RectTransform:
   - {fileID: 295242404}
   - {fileID: 2034194197}
   - {fileID: 2090972128}
+  - {fileID: 1023687060}
   m_Father: {fileID: 1506638968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -491,6 +492,750 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Language
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Names.Array.data[0]
+      value: World Test 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Names.Array.data[1]
+      value: Mundo de Teste 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Names.Array.data[0]
+      value: World Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Names.Array.data[1]
+      value: Mundo de Teste
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[0].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[0].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[0].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[0].PhaseId
+      value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[1].PhaseId
+      value: w1l2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[2].PhaseId
+      value: w1l3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[0].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[1].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[2].Names.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[0].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[0].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[1].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[2].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[3].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[4].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[5].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[6].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[7].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[8].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[9].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[10].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[0].Names.Array.data[0]
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[0].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[1].Names.Array.data[0]
+      value: Level 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[1].Names.Array.data[1]
+      value: "N\xEDvel 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[2].Names.Array.data[0]
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 254535958765124187, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Worlds.Array.data[11].Phases.Array.data[2].Names.Array.data[1]
+      value: "N\xEDvel 3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503905659138633803, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Texts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503905659138633803, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Texts.Array.data[0]
+      value: Settings
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503905659138633803, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
+      propertyPath: Texts.Array.data[1]
+      value: "Configura\xE7\xF5es"
+      objectReference: {fileID: 0}
     - target: {fileID: 2624657146112216085, guid: 3ac2a252fb337c14aaa30aac40293bde, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -711,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Play
   - Jogar
 --- !u!114 &616912127
@@ -734,7 +1479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -861,7 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Choose a world to play
   - Escolha um mundo para jogar
 --- !u!114 &635675173
@@ -1011,7 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Credits
   - "Cr\xE9ditos"
 --- !u!114 &734137642
@@ -1034,7 +1779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1111,6 +1856,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734137639}
   m_CullTransparentMesh: 1
+--- !u!1 &1023687059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023687060}
+  - component: {fileID: 1023687061}
+  m_Layer: 5
+  m_Name: PhaseButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1023687060
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023687059}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 124141005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 291.52478}
+  m_SizeDelta: {x: 0, y: 583.0505}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1023687061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023687059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 200, y: 100}
+  m_Spacing: {x: 10, y: 10}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1171244955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,74 +2523,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1684229475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1684229478}
-  - component: {fileID: 1684229477}
-  - component: {fileID: 1684229476}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1684229476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684229475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1684229477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684229475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1684229478
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684229475}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740329915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +2573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Exit
   - Sair
 --- !u!114 &1740329918
@@ -1859,7 +2596,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2035,7 +2772,9 @@ MonoBehaviour:
   _introScreen: {fileID: 73551300}
   _worldSelectionScreen: {fileID: 124141005}
   _worldButtonsContent: {fileID: 2090972128}
+  _phasesButtonsContent: {fileID: 1023687060}
   _worldButtonPrefab: {fileID: 309539357953736150, guid: f631b3ea026c4fb4cb9b4f570166ca57, type: 3}
+  _phaseButtonPrefab: {fileID: 309539357953736150, guid: 359a1d86d3dd23144bda9669a323bddb, type: 3}
 --- !u!4 &1956125409
 Transform:
   m_ObjectHideFlags: 0
@@ -2101,7 +2840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Back
   - Voltar
 --- !u!114 &2014174339
@@ -2124,7 +2863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2355,8 +3094,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 332.661}
-  m_SizeDelta: {x: 0, y: 665.323}
+  m_AnchoredPosition: {x: 0, y: 291.52478}
+  m_SizeDelta: {x: 0, y: 583.0505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2090972129
 MonoBehaviour:
@@ -2389,6 +3128,5 @@ SceneRoots:
   - {fileID: 1208500513}
   - {fileID: 1290994452}
   - {fileID: 1506638968}
-  - {fileID: 1684229478}
   - {fileID: 347712786}
   - {fileID: 1956125409}

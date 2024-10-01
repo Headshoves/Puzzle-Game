@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2212787486526096243}
   - component: {fileID: 335895181844358065}
   m_Layer: 5
-  m_Name: WorldButton
+  m_Name: PhaseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 3344731693388464947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6015532979224658474}

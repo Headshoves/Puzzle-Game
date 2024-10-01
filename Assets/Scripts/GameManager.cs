@@ -1,14 +1,10 @@
 using NaughtyAttributes;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
 
     public Language Language;
 
@@ -22,7 +18,6 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
         }
         else {
-            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -69,6 +64,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CompleteLevel(int world, string phase) {
+        for(int i = 0; i < _user.WorldData[world].Phases.Count; i++) {
+            if (_user.WorldData[world].Phases[i].PhaseId == phase) {
+                _user.WorldData[world].Phases[i].Completed = true;
+                JSONFiles.SaveJsonFile("user", _user);
+            }
+        }
+    }
+
     #endregion
 }
 
@@ -93,8 +97,8 @@ public class World {
 
 [Serializable]
 public class Phase {
+    public string PhaseId;
     [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
     public string[] Names;
-    public SceneAsset Scene;
     public bool Completed;
 }
