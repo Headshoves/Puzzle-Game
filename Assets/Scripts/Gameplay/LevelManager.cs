@@ -41,10 +41,13 @@ public class LevelManager : MonoBehaviour
                 if (tower.HasTarget()) {
                     if (tower.GetTarget() ==  target) {
                         tower.RightTarget = true;
+                        target.Complete = true;
+                        target.RightTower = true;
                     }
                 }
                 else{
                     tower.RightTarget = true;
+                    target.Complete = true;
                 }
             }
         }
@@ -64,33 +67,60 @@ public class LevelManager : MonoBehaviour
     }
 
     private async void CheckEndGame() {
-        bool allTowersComplete = true;
-        bool allTowersRight = true;
-        for(int i = 0; i < _combinations.Count; i ++) {
-            if (!_combinations[i].Tower.Complete) {
-                allTowersComplete = false;
-                break;
-            }
-            else {
-                if (!_combinations[i].Tower.RightTarget) {
-                    allTowersRight = false;
-                    break;
-                }
-            }
-        }
+        if (CheckAllTowersComplete()) {
+            bool complete = false;
 
-        if (allTowersComplete) {
-            if(allTowersRight) {
-                await Task.Delay(TimeSpan.FromSeconds(1f));
+            if (CheckAllTowersRight() && CheckAllTargets()) {
+                complete = true;
+            }
+
+            await Task.Delay(1000);
+
+            if (complete) {
                 _winScreen.SetActive(true);
                 _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
             else {
-                await Task.Delay(TimeSpan.FromSeconds(1f));
                 _loseScreen.SetActive(true);
                 _loseScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
             }
         }
+    }
+
+    private bool CheckAllTowersComplete() {
+
+        for (int i = 0; i < _combinations.Count; i++) {
+            if (!_combinations[i].Tower.Complete) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private bool CheckAllTowersRight() {
+        for (int i = 0; i < _combinations.Count; i++) {
+            if (!_combinations[i].Tower.RightTarget) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private bool CheckAllTargets() {
+        Target[] targets = FindObjectsOfType<Target>();
+
+        for(int i = 0; i < targets.Length; i++) {
+            if (!targets[i].Complete) {
+                return false;
+            }
+            else {
+                if (targets[i].HasTower && !targets[i].RightTower) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public void Launch() {

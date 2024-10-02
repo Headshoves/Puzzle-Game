@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17cc0f1c14f7044fbca576b70722878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Language: 0
+  Language: 1
   _user:
     language: 1
     WorldData: []
@@ -438,20 +438,20 @@ MonoBehaviour:
     - World Test
     - Mundo de Teste
     Phases:
-    - Names:
+    - PhaseId: w1l1
+      Names:
       - Level 1
       - "N\xEDvel 1"
-      Scene: {fileID: 102900000, guid: de99c591fc396ed4c800a3401448c1ed, type: 3}
       Completed: 0
-    - Names:
+    - PhaseId: w1l2
+      Names:
       - Level 2
       - "N\xEDvel 1"
-      Scene: {fileID: 102900000, guid: bb494839082b54b41bc63ef89bd38f81, type: 3}
       Completed: 0
-    - Names:
-      - Level 1
-      - "N\xEDvel 1"
-      Scene: {fileID: 102900000, guid: ac1b52df34a66c943a0414b15c811b32, type: 3}
+    - PhaseId: w1l3
+      Names:
+      - Level 3
+      - "N\xEDvel 3"
       Completed: 0
 --- !u!114 &869324446586668269
 MonoBehaviour:
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Settings
   - "Configura\xE7\xF5es"
 --- !u!1 &4674980555344057573
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78ae0c2d2529e344aa3f77aab989fe41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _texts:
+  Texts:
   - Loading...
   - Carregando...
 --- !u!1 &4883360910478999414
