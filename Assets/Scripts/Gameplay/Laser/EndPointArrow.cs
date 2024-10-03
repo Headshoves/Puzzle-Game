@@ -5,18 +5,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class EndPointLaser : MonoBehaviour
+public class EndPointArrow : MonoBehaviour
 {
 
-    [SerializeField] private Laser _laser;
+    [SerializeField] private Arrow _laser;
     [SerializeField] private float _speed;
-    
-    private LineRenderer _lineRenderer;
 
     private bool _shoot;
     private bool _hitSomething;
 
-    private int _laserPoints = 0;
 
     private void OnTriggerEnter(Collider other) {
         _hitSomething = true;
@@ -39,9 +36,8 @@ public class EndPointLaser : MonoBehaviour
         }
     }
 
-    public void Shoot(LineRenderer lineRenderer) {
+    public void Shoot() {
         _shoot = true;
-        _lineRenderer = lineRenderer;
 
         StartCoroutine(ShootCor());
     }
@@ -53,7 +49,6 @@ public class EndPointLaser : MonoBehaviour
     private IEnumerator ShootCor() {
         while (_shoot) {
             transform.position = transform.position + transform.forward * (_speed * Time.deltaTime);
-            _lineRenderer.SetPosition(_laserPoints + 1, transform.position);
             yield return new WaitForEndOfFrame();
         }
 
@@ -62,12 +57,9 @@ public class EndPointLaser : MonoBehaviour
 
     public void RotateLaser(float degree, Mirror mirror) {
         _shoot = false;
-
         transform.eulerAngles = new Vector3(0, degree, 0);
         transform.position = new Vector3(mirror.transform.position.x, transform.position.y, mirror.transform.position.z);
 
-        _lineRenderer.positionCount++;
-        _laserPoints++;
         _shoot = true;
         StartCoroutine(ShootCor());
     }

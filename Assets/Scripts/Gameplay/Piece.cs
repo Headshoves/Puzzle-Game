@@ -19,8 +19,14 @@ public class Piece : MonoBehaviour {
 
     public bool CanPlay = true;
 
+    private void Awake() {
+        if (_hasColor) { SetColor(ColorReference); } else { SetColor(Color.gray); }
+    }
+
     protected virtual void Start() {
-        if(_slotPosition != null) {
+
+
+        if (_slotPosition != null) {
             transform.position = _slotPosition.position + new Vector3(0, _yOffset, 0);
         }
         else {
@@ -49,7 +55,6 @@ public class Piece : MonoBehaviour {
             _moveText.gameObject.SetActive(false);
         }
 
-        if(_hasColor) { SetColor(ColorReference); }
     }
     public void SetColor(Color color) {
         foreach (var obj in _objectsToChangeColor) {

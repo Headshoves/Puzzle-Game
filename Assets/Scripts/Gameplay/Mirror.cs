@@ -8,11 +8,11 @@ public class Mirror : Piece {
 
     private bool _canRotate = true;
 
-    public float RotationAngle { private set; get; }
+    public int RotationAngle { private set; get; }
 
     protected override void Start() {
         base.Start();
-        RotationAngle = transform.rotation.eulerAngles.y;
+        RotationAngle = (int)transform.rotation.eulerAngles.y;
     }
 
     private void OnMouseDown() {
@@ -29,7 +29,7 @@ public class Mirror : Piece {
         float y = transform.rotation.eulerAngles.y + 60;
 
         transform.DORotate(new Vector3(0, y, 0), _timeToRotate).OnComplete(() => {
-            RotationAngle = RotationAngle <= 360 ? y : 30;
+            RotationAngle = RotationAngle <= 360 ? (int)y : 30;
 
             _canRotate = true;
         });

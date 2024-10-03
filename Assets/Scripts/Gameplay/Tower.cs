@@ -12,7 +12,7 @@ public class Tower : Piece
     [BoxGroup("Tower Settings")][ShowIf("_hasSpecificTarget")][SerializeField] private Target _target;
     [BoxGroup("Tower Settings")] public bool RightTarget = false;
 
-    private Laser _laser;
+    private Arrow _laser;
 
     private bool _canRotate = true;
     public float Angle { private set; get; }
@@ -21,13 +21,12 @@ public class Tower : Piece
     protected override void Start() {
         base.Start();
         if (_hasSpecificTarget) {
-            _target.HasTower = true;
-            _target.SetColor(ColorReference);
+            _target.SetTower(ColorReference);
         }
 
         Angle = transform.rotation.eulerAngles.y;
 
-        _laser = transform.GetComponentInChildren<Laser>();
+        _laser = transform.GetComponentInChildren<Arrow>();
     }
 
     private void OnMouseDown() {

@@ -6,23 +6,15 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Laser : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
-    [SerializeField] private EndPointLaser _endPoint;
+    [SerializeField] private EndPointArrow _endPoint;
 
     [BoxGroup("Tower")][SerializeField] private Tower _tower; 
 
-    private LineRenderer _lineRenderer;
-
-    private void Start() {
-        _lineRenderer = GetComponent<LineRenderer>();
-    }
-
     public void StartTrail() {
         _tower.LockRotate(true);
-        _lineRenderer.positionCount = 2;
-        _lineRenderer.SetPosition(0, transform.position);
-        _endPoint.Shoot(_lineRenderer);
+        _endPoint.Shoot();
     }
 
     public void HitNothing() {
@@ -35,7 +27,7 @@ public class Laser : MonoBehaviour
     }
 
     public void HitSomething(Mirror mirror) {
-        if((int)mirror.RotationAngle == 90 || (int)mirror.RotationAngle == -90) {
+        if(mirror.RotationAngle == 90 || mirror.RotationAngle == -90) {
             switch ((int)_tower.Angle) {
                 case 330:
                     _endPoint.RotateLaser(30, mirror);
