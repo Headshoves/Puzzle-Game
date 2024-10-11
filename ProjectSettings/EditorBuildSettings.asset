@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World1/w1l6.unity
     guid: 662e187dca6a46745a8fa2dc780bf477
+  - enabled: 1
+    path: Assets/Scenes/World1/w1l7.unity
+    guid: 18fee794b3e995a46b82108d79bc7294
+  - enabled: 1
+    path: Assets/Scenes/World1/w1l8.unity
+    guid: d3765aebf34e0034b820d41181b94897
+  - enabled: 1
+    path: Assets/Scenes/World1/w1l9.unity
+    guid: 92697bdea109d1e4e89ed04ec2dbe3f1
+  - enabled: 1
+    path: Assets/Scenes/World1/w1l10.unity
+    guid: 72db5073cb4033c49a3da8acc64bab32
   m_configObjects: {}

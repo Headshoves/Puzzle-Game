@@ -468,6 +468,126 @@ MonoBehaviour:
       - Level 6
       - "N\xEDvel 6"
       Completed: 0
+    - PhaseId: w1l7
+      Names:
+      - Level 7
+      - "N\xEDvel 7"
+      Completed: 0
+    - PhaseId: w1l8
+      Names:
+      - Level 8
+      - "N\xEDvel 8"
+      Completed: 0
+    - PhaseId: w1l9
+      Names:
+      - Level 9
+      - "N\xEDvel 9"
+      Completed: 0
+    - PhaseId: w1l10
+      Names:
+      - Level 10
+      - "N\xEDvel 10"
+      Completed: 0
+    - PhaseId: w1l11
+      Names:
+      - Level 11
+      - "N\xEDvel 11"
+      Completed: 0
+    - PhaseId: w1l12
+      Names:
+      - Level 12
+      - "N\xEDvel 12"
+      Completed: 0
+    - PhaseId: w1l13
+      Names:
+      - Level 13
+      - "N\xEDvel 13"
+      Completed: 0
+    - PhaseId: w1l14
+      Names:
+      - Level 14
+      - "N\xEDvel 14"
+      Completed: 0
+    - PhaseId: w1l15
+      Names:
+      - Level 15
+      - "N\xEDvel 15"
+      Completed: 0
+    - PhaseId: w1l16
+      Names:
+      - Level 16
+      - "N\xEDvel 16"
+      Completed: 0
+    - PhaseId: w1l17
+      Names:
+      - Level 17
+      - "N\xEDvel 17"
+      Completed: 0
+    - PhaseId: w1l18
+      Names:
+      - Level 18
+      - "N\xEDvel 18"
+      Completed: 0
+    - PhaseId: w1l19
+      Names:
+      - Level 19
+      - "N\xEDvel 19"
+      Completed: 0
+    - PhaseId: w1l20
+      Names:
+      - Level 20
+      - "N\xEDvel 20"
+      Completed: 0
+    - PhaseId: w1l21
+      Names:
+      - Level 21
+      - "N\xEDvel 21"
+      Completed: 0
+    - PhaseId: w1l22
+      Names:
+      - Level 22
+      - "N\xEDvel 22"
+      Completed: 0
+    - PhaseId: w1l23
+      Names:
+      - Level 23
+      - "N\xEDvel 23"
+      Completed: 0
+    - PhaseId: w1l24
+      Names:
+      - Level 24
+      - "N\xEDvel 24"
+      Completed: 0
+    - PhaseId: w1l25
+      Names:
+      - Level 25
+      - "N\xEDvel 25"
+      Completed: 0
+    - PhaseId: w1l26
+      Names:
+      - Level 26
+      - "N\xEDvel 26"
+      Completed: 0
+    - PhaseId: w1l27
+      Names:
+      - Level 27
+      - "N\xEDvel 27"
+      Completed: 0
+    - PhaseId: w1l28
+      Names:
+      - Level 28
+      - "N\xEDvel 28"
+      Completed: 0
+    - PhaseId: w1l29
+      Names:
+      - Level 29
+      - "N\xEDvel 29"
+      Completed: 0
+    - PhaseId: w1l30
+      Names:
+      - Level 30
+      - "N\xEDvel 30"
+      Completed: 0
 --- !u!114 &869324446586668269
 MonoBehaviour:
   m_ObjectHideFlags: 0

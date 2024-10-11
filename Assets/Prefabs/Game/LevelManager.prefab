@@ -46,18 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _combinations: []
-  _hasTutorial: 1
+  _hasTutorial: 0
   _textTutorial:
-  - "Seja bem-vindo ao mundo de teste, o objetivo do jogo \xE9 f\xE1cil: fazer com
-    que cada torre atinja o seu alvo!"
-  - "Voc\xEA s\xF3 pode girar as pe\xE7as para atingir o alvo, e para girar toque
-    nela."
-  - "Ao posicionar na dire\xE7\xE3o correta, aperte em \"Finalizar\" para disparar
-    o raio"
+  - "Rotacione o espelho para mudar a dire\xE7\xE3o do disparo"
   _winScreen: {fileID: 7952334122486423789}
   _loseScreen: {fileID: 7124125400626193695}
-  _nextSceneName: 
-  _currentSceneName: 
+  _nextSceneName: w1l11
 --- !u!1001 &8680965406418768685
 PrefabInstance:
   m_ObjectHideFlags: 0

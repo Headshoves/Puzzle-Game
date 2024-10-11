@@ -14,7 +14,7 @@ public class Arrow : MonoBehaviour
 
     public void StartTrail() {
         _tower.LockRotate(true);
-        _endPoint.Shoot();
+        _endPoint.Shoot(_tower);
     }
 
     public void HitNothing() {
@@ -27,8 +27,9 @@ public class Arrow : MonoBehaviour
     }
 
     public void HitSomething(Mirror mirror) {
-        if(mirror.RotationAngle == 90 || mirror.RotationAngle == -90) {
-            switch ((int)_tower.Angle) {
+        Debug.Log("Colidiu com um espelho");
+        if(mirror.RotationAngle == 90 || mirror.RotationAngle == 270) {
+            switch ((int)_endPoint.RotationAngle) {
                 case 330:
                     _endPoint.RotateLaser(30, mirror);
                     break;
@@ -50,7 +51,7 @@ public class Arrow : MonoBehaviour
             }
         }
         else if (mirror.RotationAngle == 210 || mirror.RotationAngle == 30) {
-            switch ((int)_tower.Angle) {
+            switch ((int)_endPoint.RotationAngle) {
                 case 330:
                     _endPoint.RotateLaser(270, mirror);
                     break;
@@ -71,8 +72,8 @@ public class Arrow : MonoBehaviour
                     break;
             }
         }
-        else if (mirror.RotationAngle == 150 || mirror.RotationAngle == -30) {
-            switch ((int)_tower.Angle) {
+        else if (mirror.RotationAngle == 150 || mirror.RotationAngle == 330) {
+            switch ((int)_endPoint.RotationAngle) {
                 case 330:
                     _endPoint.RotateLaser(150, mirror);
                     break;

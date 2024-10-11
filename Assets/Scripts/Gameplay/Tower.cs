@@ -12,6 +12,13 @@ public class Tower : Piece
     [BoxGroup("Tower Settings")][ShowIf("_hasSpecificTarget")][SerializeField] private Target _target;
     [BoxGroup("Tower Settings")] public bool RightTarget = false;
 
+    [Button("Set Colors")]
+    private void SetColorsEditor() {
+        SetColor(ColorReference);
+        if (HasTarget()) 
+            _target.SetColor(ColorReference);
+    }
+
     private Arrow _laser;
 
     private bool _canRotate = true;

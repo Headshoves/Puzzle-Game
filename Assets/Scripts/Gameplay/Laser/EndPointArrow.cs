@@ -14,6 +14,14 @@ public class EndPointArrow : MonoBehaviour
     private bool _shoot;
     private bool _hitSomething;
 
+    public float RotationAngle;
+
+    private Rigidbody _rb;
+
+    private void Start() {
+        _rb = GetComponent<Rigidbody>();
+    }
+
 
     private void OnTriggerEnter(Collider other) {
         _hitSomething = true;
@@ -36,9 +44,9 @@ public class EndPointArrow : MonoBehaviour
         }
     }
 
-    public void Shoot() {
+    public void Shoot(Tower tower) {
         _shoot = true;
-
+        RotationAngle = tower.Angle;
         StartCoroutine(ShootCor());
     }
 
@@ -48,19 +56,20 @@ public class EndPointArrow : MonoBehaviour
 
     private IEnumerator ShootCor() {
         while (_shoot) {
-            transform.position = transform.position + transform.forward * (_speed * Time.deltaTime);
+            _rb.velocity = transform.forward * _speed;
             yield return new WaitForEndOfFrame();
         }
+
+        _rb.velocity = Vector3.zero;
 
         if (!_hitSomething) { _laser.HitNothing(); }
     }
 
     public void RotateLaser(float degree, Mirror mirror) {
-        _shoot = false;
         transform.eulerAngles = new Vector3(0, degree, 0);
+        RotationAngle = degree;
         transform.position = new Vector3(mirror.transform.position.x, transform.position.y, mirror.transform.position.z);
 
-        _shoot = true;
         StartCoroutine(ShootCor());
     }
 }

@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class Piece : MonoBehaviour {
     [BoxGroup("Position")][SerializeField] private Transform _slotPosition;
     [BoxGroup("Position")][SerializeField] private float _yOffset = .75f;
+    [BoxGroup("Position")][SerializeField] protected Angles _initialAngle;
 
 
     [BoxGroup("Move Limits")][SerializeField] protected bool _hasLimitMoves = false;
@@ -24,7 +26,7 @@ public class Piece : MonoBehaviour {
     }
 
     protected virtual void Start() {
-
+        transform.eulerAngles = new Vector3(0, (int)_initialAngle, 0);
 
         if (_slotPosition != null) {
             transform.position = _slotPosition.position + new Vector3(0, _yOffset, 0);
@@ -62,3 +64,7 @@ public class Piece : MonoBehaviour {
         }
     }
 }
+
+
+[Serializable]
+public enum Angles {zero = 0, thirty = 30, ninety = 90, oneHundredFifty = 150, twoHundredTen = 210, twoHundredSeventy = 270, threeHundredThirty = 330 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class LevelManager : MonoBehaviour
     [BoxGroup("Level Settings")][SerializeField] private GameObject _winScreen;
     [BoxGroup("Level Settings")][SerializeField] private GameObject _loseScreen;
     [BoxGroup("Level Settings")][SerializeField] private string _nextSceneName;
-    [BoxGroup("Level Settings")][SerializeField] private string _currentSceneName;
+    private string _currentSceneName;
     
     public static LevelManager instance;
 
@@ -32,6 +33,8 @@ public class LevelManager : MonoBehaviour
         }
 
         if(_hasTutorial) { FindObjectOfType<TextBox>().ShowTextList(_textTutorial); }
+
+        _currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     public void RegisterLaserCollision(Tower tower,Target target) {
