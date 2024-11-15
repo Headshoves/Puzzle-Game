@@ -82,6 +82,15 @@ public class LevelManager : MonoBehaviour
             if (complete) {
                 _winScreen.SetActive(true);
                 _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
+                if (FindObjectOfType<GameManager>().LastLevel())
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                
             }
             else {
                 _loseScreen.SetActive(true);

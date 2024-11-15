@@ -228,6 +228,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3003314193250681028, guid: 07b033e5b34e53943ba70867448f6a4a, type: 3}
+      propertyPath: _initialAngle
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003314193250681028, guid: 07b033e5b34e53943ba70867448f6a4a, type: 3}
       propertyPath: _hasLimitMoves
       value: 0
       objectReference: {fileID: 0}
@@ -443,6 +447,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2190960669812182259, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190960669812182259, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190960669812182259, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190960669812182259, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -145.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190960669812182259, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973651298441656765, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: _hasTutorial
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
       propertyPath: _nextSceneName
       value: w1l2
@@ -450,6 +482,43 @@ PrefabInstance:
     - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
       propertyPath: _currentSceneName
       value: w1l1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: _textTutorial.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: _textTutorial.Array.data[0]
+      value: "Bem vindo ao Hexa-Puzzle, um jogo onde voc\xEA precisa rotacionar as
+        torres para atingir o alvo correto"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624583510634999641, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: _textTutorial.Array.data[1]
+      value: Para rotacionar, toque na torre.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1588.5857
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 834.29285
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074616235480158933, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -102.205
       objectReference: {fileID: 0}
     - target: {fileID: 8778338422525863102, guid: 083d06af652bebd4180a8867b58f207a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,6 +629,6 @@ SceneRoots:
   - {fileID: 923126006295899825}
   - {fileID: 9164506685127263856}
   - {fileID: 1549603792275645057}
-  - {fileID: 5153649481097420112}
   - {fileID: 1534719052}
   - {fileID: 754485108}
+  - {fileID: 5153649481097420112}

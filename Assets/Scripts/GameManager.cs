@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    public Language Language;
+    public static GameManager Instance;
 
     [SerializeField] private UserInfo _user;
     [SerializeField] private List<World> Worlds;
 
     private TextBox _textBox;
+
+    public int PhaseIndex = 0;
+    public World World;
     
     private void Awake() {
         if(FindObjectsOfType<GameManager>().Length > 1) {
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
         }
         else {
             DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
     }
 
@@ -33,17 +36,6 @@ public class GameManager : MonoBehaviour
         }
 
         _textBox = GetComponent<TextBox>();
-    }
-
-    public void ChangeLanguage(Language language) {
-        Language = language;
-        _user.language = language;
-
-        JSONFiles.SaveJsonFile("user", _user);
-
-        foreach(TranslateObject item in FindObjectsOfType<TranslateObject>()) {
-            item.ChangeLanguageTo(Language);
-        }
     }
 
     public List<World> GetWorlds() {
@@ -73,32 +65,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool LastLevel(){ return PhaseIndex >= World.Phases.Count - 1;}
+
     #endregion
 }
 
 [Serializable]
 public class UserInfo {
-    public Language language;
-
     public List<World> WorldData;
 
     public UserInfo(List<World> worldData) {
-        language = Language.Portuguese;
         WorldData = worldData;
     }
 }
 
 [Serializable]
 public class World {
-    [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
-    public string[] Names;
+    public string Name;
     public List<Phase> Phases;
 }
 
 [Serializable]
 public class Phase {
     public string PhaseId;
-    [InfoBox("English = 0 \n Portuguese = 1", EInfoBoxType.Normal)]
-    public string[] Names;
+    public string Name;
     public bool Completed;
 }

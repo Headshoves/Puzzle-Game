@@ -32,11 +32,14 @@ public class MenuManager : MonoBehaviour
         for(int i = 0; i < worlds.Count; i++) {
             int index = i;
             RectTransform temp = Instantiate(_worldButtonPrefab, _worldButtonsContent);
-
-            temp.GetChild(0).GetComponent<TranslateText>().Texts = worlds[index].Names.ToList();
-
+            temp.GetChild(0).GetComponent<TextMeshProUGUI>().text = worlds[index].Name;
+            
             temp.GetComponent<Button>().onClick.RemoveAllListeners();
-            temp.GetComponent<Button>().onClick.AddListener(() => {ShowWorldPhases(worlds[index].Phases); });
+            temp.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                ShowWorldPhases(worlds[index].Phases);
+                GameManager.Instance.World = worlds[index];
+            });
 
             temp.gameObject.SetActive(true);
         }
@@ -77,10 +80,27 @@ public class MenuManager : MonoBehaviour
             int index = i;
 
             RectTransform button = Instantiate(_phaseButtonPrefab, _phasesButtonsContent);
-            button.GetChild(0).GetComponent<TranslateText>().Texts = phases[index].Names.ToList();
+            button.GetChild(0).GetComponent<TextMeshProUGUI>().text = phases[index].Name;
 
             button.GetComponent<Button>().onClick.RemoveAllListeners();
-            button.GetComponent<Button>().onClick.AddListener(() => { GoToPhase(phases[index].PhaseId); });
+            button.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                GoToPhase(phases[index].PhaseId);
+            });
+
+            if (index == 0){
+                button.GetComponent<Button>().interactable = true;
+
+                button.GetComponent<Image>().color = phases[index].Completed ? Color.green : Color.yellow;
+            }
+            else if (index > 0){
+                button.GetComponent<Button>().interactable = phases[index-1].Completed;
+                
+                if(button.GetComponent<Button>().interactable)
+                    button.GetComponent<Image>().color = phases[index].Completed ? Color.green : Color.yellow;
+                else
+                    button.GetComponent<Image>().color = Color.red;
+            } 
 
             button.gameObject.SetActive(true);
             button.DOScale(1, 0.1f);
