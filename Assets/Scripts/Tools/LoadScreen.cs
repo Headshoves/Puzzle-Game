@@ -29,19 +29,11 @@ public class LoadScreen : MonoBehaviour
     private IEnumerator ReloadAsync(string sceneName) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
-        float percentage = 0;
+        while(!operation.isDone) {
+            yield return new WaitForEndOfFrame();
+        };
 
-        while (!operation.isDone) {
-            DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
-                _loadSlider.value = percentage;
-            });
-            yield return null;
-        }
-        DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
-            _loadSlider.value = percentage;
-        });
-
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         HideLoadScreen();
     }
@@ -49,19 +41,11 @@ public class LoadScreen : MonoBehaviour
     private IEnumerator LoadAsync(string sceneName, string previousScene) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
-        float percentage = 0;
-
         while(!operation.isDone) {
-            DOTween.To(()=> percentage, x=> percentage = x, operation.progress, 0.1f).OnUpdate(() => {
-                _loadSlider.value = percentage;
-            });
-            yield return null;
-        }
-        DOTween.To(() => percentage, x => percentage = x, operation.progress, 0.1f).OnUpdate(() => {
-            _loadSlider.value = percentage;
-        });
+            yield return new WaitForEndOfFrame();
+        };
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         HideLoadScreen();
     }

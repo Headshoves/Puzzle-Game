@@ -3,9 +3,12 @@ using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -15,8 +18,9 @@ public class LevelManager : MonoBehaviour
     [BoxGroup("Tutorial")][ShowIf("_hasTutorial")][TextArea(1,5)][SerializeField] private string[] _textTutorial;
 
     [BoxGroup("Level Settings")][SerializeField] private GameObject _winScreen;
+    [BoxGroup("Level Settings")][SerializeField] private TextMeshProUGUI _winText;
+    [BoxGroup("Level Settings")][SerializeField] private Button _nextLevelButton;
     [BoxGroup("Level Settings")][SerializeField] private GameObject _loseScreen;
-    [BoxGroup("Level Settings")][SerializeField] private string _nextSceneName;
     private string _currentSceneName;
     
     public static LevelManager instance;
@@ -32,7 +36,7 @@ public class LevelManager : MonoBehaviour
             _combinations.Add(new Combination(tower, tower.HasTarget() ? tower.GetTarget() : null));
         }
 
-        if(_hasTutorial) { FindObjectOfType<TextBox>().ShowTextList(_textTutorial); }
+        if(_hasTutorial) { TextBox.Instance.ShowTextList(_textTutorial); }
 
         _currentSceneName = SceneManager.GetActiveScene().name;
     }
@@ -71,24 +75,27 @@ public class LevelManager : MonoBehaviour
 
     private async void CheckEndGame() {
         if (CheckAllTowersComplete()) {
-            bool complete = false;
-
-            if (CheckAllTowersRight() && CheckAllTargets()) {
-                complete = true;
-            }
+            bool complete = CheckAllTowersRight() && CheckAllTargets();
 
             await Task.Delay(1000);
 
             if (complete) {
+                GameManager.Instance.CompleteLevel();
                 _winScreen.SetActive(true);
                 _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
                 if (FindObjectOfType<GameManager>().LastLevel())
                 {
-                    
+                    _winText.text = "Muito Bem! \n\n você terminou o mundo!";
+                    _nextLevelButton.onClick.RemoveAllListeners();
+                    _nextLevelButton.onClick.AddListener(GoToMenu);
+                    _nextLevelButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Voltar para o Menu";
                 }
                 else
                 {
-                    
+                    _winText.text = "Muito Bem! \n\n vá para a próxima fase!";
+                    _nextLevelButton.onClick.RemoveAllListeners();
+                    _nextLevelButton.onClick.AddListener(NextLevel);
+                    _nextLevelButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Próxima Fase";
                 }
                 
             }
@@ -147,15 +154,15 @@ public class LevelManager : MonoBehaviour
     }
 
     public void NextLevel() {
-        FindObjectOfType<LoadScreen>().LoadSceneAsync(_nextSceneName, _currentSceneName);
+        LoadScreen.instance.LoadSceneAsync(GameManager.Instance.GetNextPhaseId(), _currentSceneName);
     } 
 
     public void RestartLevel() {
-        FindObjectOfType<LoadScreen>().ReloadSceneAscyn(_currentSceneName);
+        LoadScreen.instance.ReloadSceneAscyn(_currentSceneName);
     }
 
     public void GoToMenu() {
-        FindObjectOfType<LoadScreen>().LoadSceneAsync("Menu", _currentSceneName);
+        LoadScreen.instance.LoadSceneAsync("Menu", _currentSceneName);
     }
 }
 

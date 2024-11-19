@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class TextBox : MonoBehaviour
 {
+    public static TextBox Instance;
 
     [SerializeField] private GameObject _textContent;
     [SerializeField] private TextMeshProUGUI _text;
@@ -19,9 +20,25 @@ public class TextBox : MonoBehaviour
     int _textCount = 0;
 
     string[] _textList;
+    
+    private bool _isShowing = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        _nextButton.onClick.RemoveAllListeners();
+        _nextButton.onClick.AddListener(() => NextText());
+    }
 
     private async void PlayText(string text) {
 
+        if(_isShowing) return;
+
+        _isShowing = true;
         _text.text = "";
         _textContent.SetActive(true);
         _nextButton.gameObject.SetActive(false);
@@ -36,7 +53,10 @@ public class TextBox : MonoBehaviour
 
         _nextButton.gameObject.SetActive(true);
         _nextButton.interactable = true;
+        
         await Task.Delay(TimeSpan.FromSeconds(.2f));
+        
+        _isShowing = false;
     }
 
     public void ShowTextList(string[] text) {
@@ -46,9 +66,6 @@ public class TextBox : MonoBehaviour
         _textCount = 0;
 
         _textList = text;
-
-        _nextButton.onClick.RemoveAllListeners();
-        _nextButton.onClick.AddListener(() => NextText());
 
         PlayText(_textList[0]);
     }

@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public List<World> GetWorlds() {
         return Worlds;
     }
+    
+    public string GetNextPhaseId(){ return World.Phases[PhaseIndex+1].PhaseId; }
 
     #region GAME
 
@@ -56,11 +58,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CompleteLevel(int world, string phase) {
-        for(int i = 0; i < _user.WorldData[world].Phases.Count; i++) {
-            if (_user.WorldData[world].Phases[i].PhaseId == phase) {
-                _user.WorldData[world].Phases[i].Completed = true;
+    public void CompleteLevel() {
+        for(int i = 0; i < _user.WorldData.Count; i++) {
+            if (_user.WorldData[i] == World) {
+                _user.WorldData[i].Phases[PhaseIndex].Completed = true;
+                PhaseIndex++;
                 JSONFiles.SaveJsonFile("user", _user);
+                break;
             }
         }
     }
