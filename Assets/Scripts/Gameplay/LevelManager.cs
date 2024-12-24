@@ -81,17 +81,17 @@ public class LevelManager : MonoBehaviour
 
             if (complete) {
                 GameManager.Instance.CompleteLevel();
+                
+                _nextLevelButton.interactable = true;
                 _winScreen.SetActive(true);
                 _winScreen.GetComponent<CanvasGroup>().DOFade(1, .3f);
-                if (FindObjectOfType<GameManager>().LastLevel())
-                {
+                if (FindObjectOfType<GameManager>().LastLevel()){
                     _winText.text = "Muito Bem! \n\n você terminou o mundo!";
                     _nextLevelButton.onClick.RemoveAllListeners();
                     _nextLevelButton.onClick.AddListener(GoToMenu);
                     _nextLevelButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Voltar para o Menu";
                 }
-                else
-                {
+                else {
                     _winText.text = "Muito Bem! \n\n vá para a próxima fase!";
                     _nextLevelButton.onClick.RemoveAllListeners();
                     _nextLevelButton.onClick.AddListener(NextLevel);
@@ -147,22 +147,25 @@ public class LevelManager : MonoBehaviour
             for (int i = 0; i < _combinations.Count; i++) {
                 _combinations[i].Tower.Launch();
             }
-
             _canLaunch = false;
         }
         
     }
 
     public void NextLevel() {
-        LoadScreen.instance.LoadSceneAsync(GameManager.Instance.GetNextPhaseId(), _currentSceneName);
+        Debug.Log("Chamou próxima fase");
+        GameManager.Instance.NextLevel();
+        _nextLevelButton.interactable = false;
     } 
 
     public void RestartLevel() {
         LoadScreen.instance.ReloadSceneAscyn(_currentSceneName);
+        _nextLevelButton.interactable = false;
     }
 
     public void GoToMenu() {
-        LoadScreen.instance.LoadSceneAsync("Menu", _currentSceneName);
+        LoadScreen.instance.LoadSceneAsync("Menu");
+        _nextLevelButton.interactable = false;
     }
 }
 

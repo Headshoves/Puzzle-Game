@@ -23,12 +23,18 @@ public class MenuManager : MonoBehaviour
     [SerializeField][BoxGroup("Prefabs")] private RectTransform _worldButtonPrefab;
     [SerializeField][BoxGroup("Prefabs")] private RectTransform _phaseButtonPrefab;
 
+    [SerializeField][BoxGroup("Buttons Sprites")] private Sprite _completedSprite;
+    [SerializeField][BoxGroup("Buttons Sprites")] private Sprite _unlockSprite;
+    [SerializeField][BoxGroup("Buttons Sprites")] private Sprite _lockSprite;
+
+    [SerializeField] [BoxGroup("Texts")] private TextMeshProUGUI _infoText;
+
     private List<World> worlds;
 
 
     private void Start() {
-        worlds = FindObjectOfType<GameManager>().GetWorlds();
-
+        worlds = GameManager.Instance.GetWorlds();
+        
         for(int i = 0; i < worlds.Count; i++) {
             int index = i;
             RectTransform temp = Instantiate(_worldButtonPrefab, _worldButtonsContent);
@@ -38,7 +44,7 @@ public class MenuManager : MonoBehaviour
             temp.GetComponent<Button>().onClick.AddListener(() =>
             {
                 ShowWorldPhases(worlds[index].Phases);
-                GameManager.Instance.World = worlds[index];
+                GameManager.Instance.SetWorld(index);
             });
 
             temp.gameObject.SetActive(true);
@@ -51,19 +57,25 @@ public class MenuManager : MonoBehaviour
         _returnWorldSelectionIntroButton.onClick.AddListener(() => { ReturnWorldSelectionToIntro(); });
     }
 
-    private void ShowWorldSelectionScreen() {
-        _introScreen.DOLocalMoveY(-1100, .3f).OnComplete(() => {
-            _worldSelectionScreen.DOLocalMoveY(0, .3f);
+    private async void ShowWorldSelectionScreen(){
+        _infoText.text = "Escolha um mundo para jogar";
+        
+        await Task.Delay(TimeSpan.FromSeconds(0.3f));
+        _introScreen.DOLocalMoveY(-1100, 1f).SetEase(Ease.InSine).OnComplete(() => {
+            _worldSelectionScreen.DOLocalMoveY(0, 1f);
         });
     }
 
     private void ReturnWorldSelectionToIntro() {
-        _worldSelectionScreen.DOLocalMoveY(1100, .3f).OnComplete(() => {
-             _introScreen.DOLocalMoveY(0, .3f);
+        _worldSelectionScreen.DOLocalMoveY(1100, 1f).OnComplete(() => {
+             _introScreen.DOLocalMoveY(0, 1f);
         });
     }
 
     private async void ShowWorldPhases(List<Phase> phases) {
+        
+        _infoText.text = "Escolha a fase que deseja jogar";
+        
         _worldButtonsContent.DOScale(0, 0.1f);
 
         await Task.Delay(TimeSpan.FromSeconds(0.05f));
@@ -86,20 +98,21 @@ public class MenuManager : MonoBehaviour
             button.GetComponent<Button>().onClick.AddListener(() =>
             {
                 GoToPhase(phases[index].PhaseId);
+                GameManager.Instance.PhaseIndex = index;
             });
 
             if (index == 0){
                 button.GetComponent<Button>().interactable = true;
 
-                button.GetComponent<Image>().color = phases[index].Completed ? Color.green : Color.yellow;
+                button.GetComponent<Image>().sprite = phases[index].Completed ? _completedSprite : _unlockSprite;
             }
             else if (index > 0){
                 button.GetComponent<Button>().interactable = phases[index-1].Completed;
                 
                 if(button.GetComponent<Button>().interactable)
-                    button.GetComponent<Image>().color = phases[index].Completed ? Color.green : Color.yellow;
+                    button.GetComponent<Image>().sprite = phases[index].Completed ? _completedSprite : _unlockSprite;
                 else
-                    button.GetComponent<Image>().color = Color.red;
+                    button.GetComponent<Image>().sprite = _lockSprite;
             } 
 
             button.gameObject.SetActive(true);
@@ -109,6 +122,6 @@ public class MenuManager : MonoBehaviour
     }
 
     private void GoToPhase(string phaseId) {
-        FindObjectOfType<LoadScreen>().LoadSceneAsync(phaseId, "Menu");
+        FindObjectOfType<LoadScreen>().LoadSceneAsync(phaseId);
     }
 }

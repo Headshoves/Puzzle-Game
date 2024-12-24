@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -33,9 +34,13 @@ public class TextBox : MonoBehaviour
         _nextButton.onClick.RemoveAllListeners();
         _nextButton.onClick.AddListener(() => NextText());
     }
+    
+    private CancellationTokenSource _cancellationToken;
 
-    private async void PlayText(string text) {
-
+    private async void PlayText(string text)
+    {
+        _cancellationToken = new CancellationTokenSource();
+        
         if(_isShowing) return;
 
         _isShowing = true;
@@ -47,6 +52,18 @@ public class TextBox : MonoBehaviour
         await Task.Delay(TimeSpan.FromSeconds(.2f));
 
         for (int i = 0; i < text.Length; i++) {
+            if (_cancellationToken.IsCancellationRequested)
+            {
+                _text.text = text;
+                _text.text += ".";
+
+                _nextButton.gameObject.SetActive(true);
+                _nextButton.interactable = true;
+        
+                _isShowing = false;
+                
+                return;
+            }
             _text.text += text[i];
             await Task.Delay(TimeSpan.FromSeconds(_timeToShowChar));
         }
@@ -85,6 +102,17 @@ public class TextBox : MonoBehaviour
 
                 _nextButton.gameObject.SetActive(false);
             });
+        }
+    }
+
+    private void Update()
+    {
+        if (_isShowing)
+        {
+            if (Input.touchCount > 0)
+            {
+                _cancellationToken.Cancel();
+            }
         }
     }
 }

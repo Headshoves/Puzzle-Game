@@ -4,11 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Piece : MonoBehaviour {
     [BoxGroup("Position")][SerializeField] private Transform _slotPosition;
     [BoxGroup("Position")][SerializeField] private float _yOffset = .75f;
-    [BoxGroup("Position")][SerializeField] protected Angles _initialAngle;
+    [BoxGroup("Position")][SerializeField] protected bool _specificAngle;
+    [BoxGroup("Position")][SerializeField][ShowIf("_specificAngle")] protected Angles _initialAngle;
 
 
     [BoxGroup("Move Limits")][SerializeField] protected bool _hasLimitMoves = false;
@@ -23,6 +25,21 @@ public class Piece : MonoBehaviour {
 
     private void Awake() {
         if (_hasColor) { SetColor(ColorReference); } else { SetColor(Color.gray); }
+
+        if (!_specificAngle)
+        {
+            int randomIndex = Random.Range(1, 6);
+
+            switch (randomIndex)
+            {
+                case 1: _initialAngle = Angles.thirty; break;
+                case 2: _initialAngle = Angles.ninety; break;
+                case 3: _initialAngle = Angles.oneHundredFifty; break;
+                case 4: _initialAngle = Angles.twoHundredTen; break;
+                case 5: _initialAngle = Angles.twoHundredSeventy; break;
+                case 6: _initialAngle = Angles.threeHundredThirty; break;
+            }
+        }
     }
 
     protected virtual void Start() {

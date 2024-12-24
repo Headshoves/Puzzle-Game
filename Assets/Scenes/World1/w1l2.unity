@@ -317,6 +317,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3003314193250681028, guid: 07b033e5b34e53943ba70867448f6a4a, type: 3}
+      propertyPath: _specificAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003314193250681028, guid: 07b033e5b34e53943ba70867448f6a4a, type: 3}
       propertyPath: ColorReference.b
       value: 1
       objectReference: {fileID: 0}

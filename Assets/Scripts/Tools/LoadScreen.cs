@@ -15,10 +15,10 @@ public class LoadScreen : MonoBehaviour
         instance = this;
     }
 
-    public void LoadSceneAsync(string sceneName, string previousScene) {
+    public void LoadSceneAsync(string sceneName) {
         _loadScreen.gameObject.SetActive(true);
         _loadScreen.GetComponent<CanvasGroup>().DOFade(1, .2f).OnComplete(() => {
-            StartCoroutine(LoadAsync(sceneName, previousScene));
+            StartCoroutine(LoadAsync(sceneName));
         });
     }
 
@@ -30,21 +30,25 @@ public class LoadScreen : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         while(!operation.isDone) {
+            _loadSlider.value = operation.progress;
             yield return new WaitForEndOfFrame();
         };
 
+        _loadSlider.value = 1.0f;
         yield return new WaitForSeconds(0.5f);
 
         HideLoadScreen();
     }
 
-    private IEnumerator LoadAsync(string sceneName, string previousScene) {
+    private IEnumerator LoadAsync(string sceneName) {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         while(!operation.isDone) {
+            _loadSlider.value = operation.progress;
             yield return new WaitForEndOfFrame();
         };
 
+        _loadSlider.value = 1.0f;
         yield return new WaitForSeconds(0.5f);
 
         HideLoadScreen();

@@ -10,10 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UserInfo _user;
     [SerializeField] private List<World> Worlds;
 
-    private TextBox _textBox;
-
     public int PhaseIndex = 0;
-    public World World;
+    public int WorldIndex = 0;
     
     private void Awake() {
         if(FindObjectsOfType<GameManager>().Length > 1) {
@@ -27,22 +25,26 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
 
-        if (JSONFiles.ContainsJsonFile("user")) {
-            _user = JSONFiles.LoadJsonFile<UserInfo>("user");
+        if (JSONFiles.ContainsJsonFile("user"))
+        {
+            var tempUser = JSONFiles.LoadJsonFile<UserInfo>("user");
+            if (tempUser.WorldData.Count > 0)
+            {
+                _user = tempUser;
+            }
         }
         else {
             JSONFiles.CreateJsonFile("user");
-            _user = new UserInfo(Worlds);
         }
-
-        _textBox = GetComponent<TextBox>();
-    }
-
-    public List<World> GetWorlds() {
-        return Worlds;
     }
     
-    public string GetNextPhaseId(){ return World.Phases[PhaseIndex+1].PhaseId; }
+    public void SetWorld(int indexWorld){ WorldIndex = indexWorld;}
+
+    public List<World> GetWorlds() {
+        return _user.WorldData;
+    }
+    
+    public string GetNextPhaseId(){ return _user.WorldData[WorldIndex].Phases[PhaseIndex+1].PhaseId; }
 
     #region GAME
 
@@ -58,18 +60,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CompleteLevel() {
-        for(int i = 0; i < _user.WorldData.Count; i++) {
-            if (_user.WorldData[i] == World) {
-                _user.WorldData[i].Phases[PhaseIndex].Completed = true;
-                PhaseIndex++;
-                JSONFiles.SaveJsonFile("user", _user);
-                break;
-            }
-        }
+    public void NextLevel(){
+        PhaseIndex++;
+        LoadScreen.instance.LoadSceneAsync(_user.WorldData[WorldIndex].Phases[PhaseIndex].PhaseId);
     }
 
-    public bool LastLevel(){ return PhaseIndex >= World.Phases.Count - 1;}
+    public void CompleteLevel() {
+        _user.WorldData[WorldIndex].Phases[PhaseIndex].Completed = true;
+        JSONFiles.SaveJsonFile("user", _user);
+    }
+
+    public bool LastLevel(){ return PhaseIndex >= _user.WorldData[WorldIndex].Phases.Count - 1;}
 
     #endregion
 }
